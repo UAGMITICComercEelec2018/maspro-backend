@@ -28,7 +28,7 @@ custom:
     #     - functionErrors
     #     - functionThrottles
     customDomain:
-      basePath: ${file(./serverless.env.yml):${opt:stage, self:custom.default_stage}.SERVICE_DOMAIN_BASE_PATH}
+      basePath: ${opt:stage, self:custom.default_stage}
       domainName: ${file(./serverless.env.yml):${opt:stage, self:custom.default_stage}.SERVICE_DOMAIN_NAME}
       stage: ${opt:stage, self:custom.default_stage}
       createRoute53Record: true
@@ -82,4 +82,12 @@ functions:
             - http:
                 path: charge/oxxo
                 method: put
+                cors: true
+    conektaTest:
+        handler: src/functions/conektaTest.webhook
+        timeout: 30
+        events:
+            - http:
+                path: conekta/webhook
+                method: post
                 cors: true
