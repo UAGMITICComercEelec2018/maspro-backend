@@ -30,7 +30,6 @@ custom:
     customDomain:
       basePath: ${file(./serverless.env.yml):${opt:stage, self:custom.default_stage}.SERVICE_DOMAIN_BASE_PATH}
       domainName: ${file(./serverless.env.yml):${opt:stage, self:custom.default_stage}.SERVICE_DOMAIN_NAME}
-      certificateName: ${file(./serverless.env.yml):${opt:stage, self:custom.default_stage}.DOMAIN_CERTIFICATE_NAME}
       stage: ${opt:stage, self:custom.default_stage}
       createRoute53Record: true
 plugins:
