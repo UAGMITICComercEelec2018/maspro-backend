@@ -91,3 +91,11 @@ functions:
                 path: conekta/webhook
                 method: post
                 cors: true
+    paypalTest:
+        handler: src/functions/paypalTest.webhook
+        timeout: 30
+        events:
+            - http:
+                path: paypal/webhook
+                method: get
+                cors: true

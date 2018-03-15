@@ -5,8 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug":
-      "export SLS_DEBUG=* && serverless offline start --port 9000 --stage local",
+    "debug": "export SLS_DEBUG=* && serverless offline start --port 9000 --stage local",
     "start": "serverless offline start --port 9000 --stage local",
     "deploy": "sh -ac '. ./deploy.sh $FUNCTION'"
   },
@@ -43,6 +42,7 @@
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
     "mysql2": "^1.5.1",
+    "paypal-rest-sdk": "^1.8.1",
     "request": "^2.82.0",
     "request-promise": "^4.2.2",
     "sequelize": "4.8.0",
